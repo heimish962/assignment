@@ -1,11 +1,23 @@
 package calculator;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        // 무한루프를 위해 while (true)로 항상 참일 때
+        while (true) {
+            System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
+            String input = sc.next();
+
+            // 두 객체를 비교하는 Objects.equals로 input(String타입)이 "exit"이면 sout띄우고 break로 무한루프 나오기
+            if (Objects.equals(input, "exit")) {
+                System.out.println("프로그램을 종료합니다.");
+                break;
+            }
+        }
 
         System.out.print("첫 번째 숫자를 입력하세요: ");
         // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
