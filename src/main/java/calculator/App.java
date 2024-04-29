@@ -16,6 +16,16 @@ public class App {
         System.out.println("사칙연산 기호를 입력하세요. : ");
         // 입력값을 chat 타입으로 변경.
         char operator = sc.next().charAt(0);
-        System.out.println("operator = " + operator);
+
+        int result = 0;
+        // 연산자를 switch case 문으로 나누고 이 연산자들이 아닌 다른 걸 입력하면 default 로 0출력
+            result = switch(operator) {
+                case '+' -> num1 + num2;
+                case '-' -> num1 - num2;
+                case '*' -> num1 * num2;
+                case '/' -> num1 / num2;
+                default -> 0;
+            };
+        System.out.println("결과: " + result);
     }
 }
