@@ -35,7 +35,12 @@ public class Calculator {
         return result;
     }
 
+    // getter 메서드 추가
     public ArrayList<Integer> getResults() {
-        return results; // 저장된 연산 결과를 반환
+        return new ArrayList<>(results); // 저장된 연산 결과를 반환하기
+    }
+    //setter 메서드 추가
+    public void setResults(ArrayList<Integer> results) {
+        this.results = new ArrayList<>(results);
     }
 }
