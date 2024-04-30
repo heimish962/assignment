@@ -59,6 +59,13 @@ public class App {
                     int removedResult = results.remove(0); // 가장 먼저 저장된 결과 삭제
                     System.out.println("removedResult = " + removedResult);
                 }
+            } else if (Objects.equals(input, "inquiry")) { // 추가 조건으로 "inquiry"를 넣어 줬고 향상된 for문으로 res라는 결괏값을 출력.
+                System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+                for (int res : results) {
+                    System.out.println(res);
+                }
+            }
+
                 System.out.println("더 계산하시겠습니까? (exit 입력 시 종료): ");
                 input = sc.next();
                 if (Objects.equals(input,"exit")) {
@@ -67,6 +74,4 @@ public class App {
                 }
             }
         }
-        sc.close(); // 스캐너 닫기
     }
-}
