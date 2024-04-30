@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Calculator {
     private ArrayList<Integer> results; // 연산 결과를 저장할 ArrayList 필드
 
-    public Calculator() {
-        this.results = new ArrayList<>(); // ArrayList 초기화
-    }
+   public Calculator(ArrayList<Integer> results) {
+       this.results = new ArrayList<>(results);
+   }
 
     public int calculate(int num1, int num2, char operator) throws BadInputException {
         int result = 0;
