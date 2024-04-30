@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int[] results = new int[10]; // 크기가 10인 정수 배열을 new 키워드로 생성
+        int count = 0; // 연산 결과를 저장할 때 변수 초기화(저장된 연산결과 개수 추적) index=count
 
         // 무한루프를 위해 while (true)로 항상 참일 때 연산
         while (true) {
@@ -43,6 +45,9 @@ public class App {
                     continue; // continue 로 다음 반복으로 이동
             }
             System.out.println("결과: " + result);
+
+            results[count] = result; // 결과를 배열에 저장
+            count++; // index = count 증가
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
             String input = sc.next();
