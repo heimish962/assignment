@@ -43,4 +43,12 @@ public class Calculator {
     public void setResults(ArrayList<Integer> results) {
         this.results = new ArrayList<>(results);
     }
+    // removeResult 추가
+    public void removeResult() {
+        if (!results.isEmpty()) {
+            results.remove(0); // 가장 먼저 저장된 데이터 삭제
+        } else {
+            System.out.println("저장된 연산 결과가 없습니다.");
+        }
+    }
 }

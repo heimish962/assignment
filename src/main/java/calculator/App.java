@@ -41,6 +41,8 @@ public class App {
             if (input.equals("exit")) {
                 System.out.println("프로그램을 종료합니다.");
                 break; // 무한 루프 종료
+            } else if (input.equals("remove")) {
+                calculator.removeResult();
             }
         }
     }
