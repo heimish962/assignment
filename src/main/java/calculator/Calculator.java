@@ -1,13 +1,12 @@
 package calculator;
 
 import java.util.ArrayList;
-import calculator.BadInputException;
 
 public class Calculator {
-    private ArrayList<String> results;
+    private ArrayList<Integer> results; // 연산 결과를 저장할 ArrayList 필드
 
     public Calculator() {
-        this.results = new ArrayList<>();
+        this.results = new ArrayList<>(); // ArrayList 초기화
     }
 
     public int calculate(int num1, int num2, char operator) throws BadInputException {
@@ -21,18 +20,22 @@ public class Calculator {
                 case '*': result = num1 * num2;
                     break;
                 case '/':
-                    try { // try-catch 문으로 나눗셈 연산 예외 처리
-                        result = num1 / num2;
-                    } catch (ArithmeticException e) {
-                        throw new BadInputException("0으로 나누기");
+                    if (num2 == 0) {
+                        throw new BadInputException("0으로 나눌 수 없습니다.");
                     }
+                    result = num1 / num2;
                     break;
                 default:
                     throw new BadInputException("올바른 연산자를 입력하세요.");
             }
-        } catch (NumberFormatException e) {
-            throw new BadInputException(e.getMessage());
+        } catch (BadInputException e) {
+            throw new BadInputException("0으로 나눌 수 없습니다.");
         }
+        results.add(result); // 연산 결과를 ArrayList에 저장
         return result;
+    }
+
+    public ArrayList<Integer> getResults() {
+        return results; // 저장된 연산 결과를 반환
     }
 }
