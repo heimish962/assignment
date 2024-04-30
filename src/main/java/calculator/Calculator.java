@@ -29,7 +29,7 @@ public class Calculator {
                     throw new BadInputException("올바른 연산자를 입력하세요.");
             }
         } catch (BadInputException e) {
-            throw new BadInputException("0으로 나눌 수 없습니다.");
+            throw new BadInputException("올바른 연산자를 입력하세요.");
         }
         results.add(result); // 연산 결과를 ArrayList에 저장
         return result;
