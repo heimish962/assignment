@@ -29,10 +29,7 @@ public class App {
                 System.out.println("프로그램을 종료합니다.");
                 break; // 무한 루프 종료
             } else if (input.equals("inquiry")) { // 추가 조건으로 "inquiry"를 넣어 줬고 향상된 for문으로 res라는 결괏값을 출력.
-                System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
-                for (int res : calculator.getResults()) { // getResults() 메서드로 저장된 연산결과 가져오기
-                    System.out.println(res);
-                }
+               calculator.inquiryResults(); // inquriyResults() 매서드로 저장된 연산 결과 출력
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료): ");

@@ -39,9 +39,12 @@ public class Calculator {
     public ArrayList<Integer> getResults() {
         return new ArrayList<>(results); // 저장된 연산 결과를 반환하기
     }
-    //setter 메서드 추가
-    public void setResults(ArrayList<Integer> results) {
-        this.results = new ArrayList<>(results);
+    //inquiry 메서드 추가
+    public void inquiryResults() {
+        System.out.println("저장된 연산 결과를 조회합니다.");
+        for (int res : results) {
+            System.out.println(res);
+        }
     }
     // removeResult 추가
     public void removeResult() {
