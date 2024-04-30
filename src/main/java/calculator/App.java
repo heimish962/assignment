@@ -46,8 +46,16 @@ public class App {
             }
             System.out.println("결과: " + result);
 
-            results[count] = result; // 결과를 배열에 저장
-            count++; // index = count 증가
+            /* 연산 결과가 10개를 초과하는 경우 */
+            if (count == results.length) {
+                // 가장 먼저 저장된 결과 삭제
+                for (int i=0; i<results.length -1; i++) {
+                    results[i] = results[i+1]; // 앞으로 한칸씩 이동
+                } results[count - 1] = result; // 새로운 결괏값 마지막 인덱스에 저장
+            } else {
+                results[count] = result;
+                count++; // index = count 증가
+            }
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
             String input = sc.next();
@@ -55,11 +63,6 @@ public class App {
             if (Objects.equals(input,"exit")) {
                 System.out.println("프로그램을 종료합니다.");
                 break; // 무한 루프 종료
-            }
-            // results의 길이가 10으로 고정되어 있어서 count와 같으면 실행 종료
-            if (count == results.length) {
-                System.out.println("더 이상 결과를 저장할 수 없습니다.");
-                break;
             }
         }
         sc.close(); // 스캐너 닫기
