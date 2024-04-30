@@ -56,6 +56,11 @@ public class App {
                 System.out.println("프로그램을 종료합니다.");
                 break; // 무한 루프 종료
             }
+            // results의 길이가 10으로 고정되어 있어서 count와 같으면 실행 종료
+            if (count == results.length) {
+                System.out.println("더 이상 결과를 저장할 수 없습니다.");
+                break;
+            }
         }
         sc.close(); // 스캐너 닫기
     }
